@@ -8,24 +8,35 @@ package robert.vinnsla;
  *
  *****************************************************************************/
 public class Tala {
-    public int tala;
+    public double tala;
 
-    public Tala(int tala){
+    public Tala(double tala){
         this.tala=tala;
     }
     public Tala plus(Tala a, Tala b){
-        int samlagning = a.getTala() + b.getTala();
+        double samlagning = a.getTala() + b.getTala();
         return new Tala(samlagning);
     }
     public Tala minus(Tala a, Tala b){
-        int fradrattur = a.getTala() - b.getTala();
+        double fradrattur = a.getTala() - b.getTala();
         return new Tala(fradrattur);
     }
     public Tala margfoldun(Tala a, Tala b){
-        int margfoldun = a.getTala() * b.getTala();
+        double margfoldun = a.getTala() * b.getTala();
         return new Tala(margfoldun);
     }
-    public int getTala() {
+    public Tala deiling(Tala a, Tala b){
+        double deiling = a.getTala() / b.getTala();
+        return new Tala(deiling);
+    }
+    public Tala rot(Tala a){
+        return new Tala(Math.sqrt(a.getTala()));
+    }
+    public Tala veldi(Tala a, Tala b){
+       double veldi = Math.pow(a.getTala(), b.getTala());
+       return new Tala(veldi);
+    }
+    public double getTala() {
         return tala;
     }
     public void setTala(int a){
